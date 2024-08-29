@@ -17,7 +17,8 @@ export default function Home() {
           Gimnasio Powerlifting
         </Typography>
         <Typography className="max-w-2xl" variant="h5">
-        Transforma tu esfuerzo en resultados, cada día es una nueva oportunidad para superar tus límites
+          Transforma tu esfuerzo en resultados, cada día es
+          una nueva oportunidad para superar tus límites
         </Typography>
         <Link href="#Contacto">
           <Button size="lg" variant="perso">
