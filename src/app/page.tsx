@@ -17,14 +17,7 @@ export default function Home() {
           Gimnasio Powerlifting
         </Typography>
         <Typography className="max-w-2xl" variant="h5">
-          Tu aliado en el camino hacia el crecimiento
-          personal y profesional. Con un enfoque
-          personalizado y empático, te ayudamos a descubrir
-          y potenciar tus habilidades, superar obstáculos y
-          alcanzar tus objetivos. Te brindamos las
-          herramientas necesarias para transformar tu vida y
-          lograr un equilibrio que refleje tu verdadero
-          potencial.
+        Transforma tu esfuerzo en resultados, cada día es una nueva oportunidad para superar tus límites
         </Typography>
         <Link href="#Contacto">
           <Button size="lg" variant="perso">
@@ -45,7 +38,7 @@ export default function Home() {
           variant="primary"
           size="lg"
           image="pic2.jpg"
-          text="Tu potencial es infinito, atrevete a explorarlo"
+          text="El éxito se construye repitiendo hoy lo que otros no harán."
         />
       </div>
       <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
@@ -110,7 +103,7 @@ export default function Home() {
           variant="primary"
           size="lg"
           image="pic.jpg"
-          text="Conviertete en el cambio que deseas ver en el mundo"
+          text="Más que un gimnasio, es tu camino hacia la grandeza"
         />
       </div>
 
