@@ -53,9 +53,9 @@ export function Header({ className }: SidebarProps) {
               href={item.href}
               className={cn(
                 `py-1 pointer block w-fit bg-left-bottom bg-gradient-to-r
-                from-transparent to-transparent bg-[length:0%_3px]
-                bg-no-repeat hover:bg-[length:100%_3px] hover:from-[#4b0c0c]
-                hover:to-[#4b0c0c] transition-all duration-500 ease-out`,
+                  from-transparent to-transparent bg-[length:0%_3px]
+                  bg-no-repeat hover:bg-[length:100%_3px] hover:from-[#4b0c0c]
+                  hover:to-[#4b0c0c] transition-all duration-500 ease-out`,
                 selected && 'text-primary'
               )}
               target={item.openInNewTab ? '_blank' : ''}
