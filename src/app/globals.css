@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap');
 
 @layer base {
   :root {
@@ -55,6 +56,9 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -67,6 +71,118 @@
       max-width: 1440px;
       padding-left: 24px;
       padding-right: 24px;
+      scroll-behavior: smooth;
     }
+  }
+  .divider-container {
+    position: relative;
+    align-items: center;
+    background-color: #421212;
+  }
+  .divider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 40%;
+  }
+  .divider-text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegúrate de que el texto esté por encima de la imagen */
+  }
+  .corinthia-regular {
+    font-family: 'Corinthia', cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .corinthia-bold {
+    font-family: 'Corinthia', cursive;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+  }
+  .merriweather-sans-regular {
+    font-family: "Merriweather Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+}
+@layer components {
+  .spectrum-background {
+    
+    background: linear-gradient(
+        150deg,
+        #141414,
+        transparent 30%
+      ),
+      linear-gradient(
+        330deg,
+        rgb(20, 20, 24),
+        transparent 30%
+      ),
+      linear-gradient(225deg, #131212, #131212, #171718);
+  }
+}
+
+.button-53 {
+  background-color: #4b0c0c;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #e6e6e6;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-53:focus {
+  outline: 0;
+}
+
+.button-53:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #ffffff;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-53 {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
   }
 }

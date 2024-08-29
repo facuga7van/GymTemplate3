@@ -9,20 +9,16 @@ import { Analytics } from '@vercel/analytics/react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title:
-    'Pandem - Information you need during on-call emergencies',
-  description:
-    'Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.',
-  openGraph: {
-    images: '/opengraph-image.png'
-  },
+  title: 'Gimnasio Powerlifting',
+  description: 'Lorem ipsum dolor.',
+  // openGraph: {
+  //   images: '/opengraph-image.png'
+  // },
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Pandem - Information you need during on-call emergencies',
-    description:
-      'Quickly link new on-call tickets to similar past incidents and their solutions. All directly in Slack the moment an incident happens.',
-    images: ['https://i.imgur.com/MPMcyPP.png']
+    title: 'Gimnasio Powerlifting',
+    description: 'Lorem ipsum dolor.'
+    // images: ['https://i.imgur.com/MPMcyPP.png']
   }
 }
 
@@ -41,16 +37,16 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <main
-            className={`flex min-h-screen flex-col ${inter.className}`}
+            className={`flex flex-col ${inter.className}`}
           >
             <Header />
-            <div className="flex flex-1 justify-center w-full">
-              <div className="flex w-full max-w-[1280px] h-full">
+            <div className="flex flex-1 justify-center w-full spectrum-background">
+              <div className="flex w-full h-full">
                 {children}
               </div>
             </div>

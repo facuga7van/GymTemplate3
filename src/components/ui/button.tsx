@@ -22,6 +22,7 @@ const buttonVariants = cva(
           'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         ghost:
           'bg-primary font-semibold hover:bg-primary/90 text-black',
+        perso:'button-53',
         link: 'text-primary underline-offset-4 hover:underline'
       },
       size: {

@@ -1,93 +1,142 @@
 import { Button } from '@/components/ui/button'
 import Typography from '@/components/ui/typography'
-import Image from 'next/image'
 import Feature from './feature'
-import { ArrowUpDown, Timer, Workflow } from 'lucide-react'
+import SheetsData from '@/components/common/Excel';
+import { Medal, HeartPulse, Handshake } from 'lucide-react'
 import Link from 'next/link'
+import { Divider } from '@/components/ui/divider'
 
 export default function Home() {
   return (
     <div
-      className="flex flex-col h-full md:py-36 md:px-32 pt-11 pb-24 px-8
-        w-full items-center text-center gap-12"
+      className="flex flex-col h-full md:py-20 pt-11 pb-24 w-full
+        items-center text-center gap-12 bg-color-1"
     >
       <div className="flex flex-col gap-6 items-center">
         <Typography className="max-w-2xl" variant="h1">
-          Information you need during on-call emergencies
+          Gimnasio Powerlifting
         </Typography>
         <Typography className="max-w-2xl" variant="h5">
-          Quickly link new on-call tickets to similar past
-          incidents and their solutions. All directly in
-          Slack the moment an incident happens.
+          Tu aliado en el camino hacia el crecimiento
+          personal y profesional. Con un enfoque
+          personalizado y empático, te ayudamos a descubrir
+          y potenciar tus habilidades, superar obstáculos y
+          alcanzar tus objetivos. Te brindamos las
+          herramientas necesarias para transformar tu vida y
+          lograr un equilibrio que refleje tu verdadero
+          potencial.
         </Typography>
-        <Link
-          href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-          target="_blank"
-        >
-          <Button size="tiny" variant="ghost">
-            {`Get Started`}
+        <Link href="#Contacto">
+          <Button size="lg" variant="perso">
+            {`Empecemos`}
           </Button>
         </Link>
-        <Image
-          width={1024}
-          height={632}
-          alt="Pandem.dev hero image"
-          src="/hero1.png"
+        <div className="p-2 border-4 border-[#421212]/40">
+          <img
+            width={1024}
+            height={632}
+            alt="Gym image"
+            src="/pic.jpg"
+          />
+        </div>
+      </div>
+      <div className="w-full h-[200px] divider-container">
+        <Divider
+          variant="primary"
+          size="lg"
+          image="pic2.jpg"
+          text="Tu potencial es infinito, atrevete a explorarlo"
         />
       </div>
       <div className="flex flex-col md:pt-24 md:gap-36 gap-24 items-center">
-        <div className="flex flex-col gap-12 items-center">
-          <Typography className="max-w-2xl" variant="h1">
-            Quick solutions, less stress
+        <div className="flex flex-col gap-6 max-w-2xl items-center">
+          <Typography
+            className="max-w-2xl mb-10"
+            variant="h1"
+          >
+            Staff
           </Typography>
-          <div className="flex md:flex-row flex-col gap-12">
-            <Feature
-              icon={<Timer size={24} />}
-              headline="Fix emergencies fast"
-              description="Save 20-30 minutes per on-call ticket - no more searching for relevant issues and runbooks"
+          <div
+            className="flex flex-col sm:flex-row gap-10 mx-auto items-center p-2
+              border-4 border-[#421212]/40"
+          >
+            <img
+              className="sm:w-[15rem]"
+              alt="Paula image"
+              src="/man.jpg"
             />
-            <Feature
-              icon={<ArrowUpDown size={24} />}
-              headline="Universally compatible"
-              description="Works with PagerDuty, Jira, or custom Slack alerts—Pandem integrates with any system"
-            />
-            <Feature
-              icon={<Workflow size={24} />}
-              headline="Secure for your org"
-              description="We keep your data safe by taking top security measures."
+            <img
+              className="sm:w-[15rem]"
+              alt="Paula image"
+              src="/woman.jpg"
             />
           </div>
         </div>
+
+        <div className="flex flex-col gap-12 items-center">
+          <Typography className="max-w-2xl" variant="h1">
+            Ofrecemos
+          </Typography>
+          <div className="flex md:flex-row flex-col gap-12">
+            <Feature
+              icon={<Medal size={24} />}
+              headline="Crossfit"
+              description="Entrenamiento funcional de alta intensidad que mejora fuerza, resistencia y agilidad con movimientos variados."
+            />
+            <Feature
+              icon={<HeartPulse size={24} />}
+              headline="Spinning"
+              description="Ciclismo indoor que quema calorías, fortalece piernas y mejora el cardio al ritmo de la música."
+            />
+            <Feature
+              icon={<Handshake size={24} />}
+              headline="Musculación"
+              description="Ejercicios de fuerza con pesas para aumentar masa muscular y fortalecer todo el cuerpo."
+            />
+          </div>
+        </div>
+
+
         <div className="flex flex-col gap-6 max-w-2xl items-center">
-          <Typography className="max-w-2xl" variant="h1">
-            Instant setup, no custom code
-          </Typography>
-          <Typography className="max-w-2xl" variant="p">
-            Quickly link new on-call tickets to similar past
-            incidents and their solutions. All directly in
-            Slack the moment an incident happens.
-          </Typography>
-          <Image
-            width={1024}
-            height={632}
-            alt="Pandem.dev hero image"
-            src="/hero1.png"
-          />
-        </div>
-        <div className="flex flex-col gap-6 items-center">
-          <Typography className="max-w-2xl" variant="h1">
-            Get in touch
-          </Typography>
-          <div>Book a demo, or hop on a call</div>
-          <Link
-            href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-            target="_blank"
+          <Typography
+            className="max-w-2xl"
+            variant="h1"
           >
-            <Button size="tiny" variant="ghost">
-              {`Book now`}
-            </Button>
-          </Link>
+            Horarios
+          </Typography>
+          <div>
+          <SheetsData/>
+          </div>
         </div>
+      </div>
+      <div className="w-full h-[200px] divider-container">
+        <Divider
+          variant="primary"
+          size="lg"
+          image="pic.jpg"
+          text="Conviertete en el cambio que deseas ver en el mundo"
+        />
+      </div>
+      
+
+      <div
+        id="Contacto"
+        className="flex flex-col gap-6 items-center"
+      >
+        <Typography className="max-w-2xl" variant="h1">
+          Contacto
+        </Typography>
+        <Typography className="max-w-2xl" variant="h6">
+          Por cualquier consulta no dudes en hablarme!
+        </Typography>
+        <Link
+          href="https://wa.me/5491131550341"
+          target="_blank"
+        >
+          <Button size="lg" variant="perso">
+            {`Agendar`}
+          </Button>
+        </Link>
       </div>
     </div>
   )

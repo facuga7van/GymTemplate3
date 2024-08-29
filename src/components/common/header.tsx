@@ -1,7 +1,6 @@
-'use client'
+"use client"
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { usePathname } from 'next/navigation'
 import Typography from '@/components/ui/typography'
 import {
@@ -20,45 +19,21 @@ export function Header({ className }: SidebarProps) {
   const pathname = usePathname()
   const items = [
     {
-      href: 'https://map.sistilli.dev/public/coding/SaaS+Boilerplate',
-      title: 'Book a demo',
+      href: '#',
+      title: 'Agenda',
       openInNewTab: true
+    },
+    { href: '#', title: 'Preguntas frecuentes' },
+    {
+      href: '#',
+      title: 'Contacto'
     }
-    // { href: '#pricing', title: 'Features' },
-    // {
-    //   href: 'mailto:myemail@.com',
-    //   title: 'Contact Us'
-    // }
   ]
 
   const getLogo = () => (
     <Link href="/" className="pointer flex items-center">
-      <img src="/logo.svg" className="mr-3" />
-      <Typography className="!text-white !text-base font-medium ">
-        Pandem
-      </Typography>
+      <img height={30} width={30} src="/logo.svg" className="mr-3" />
     </Link>
-  )
-
-  const getAuthButtons = () => (
-    <div className="flex gap-3 items-center">
-      <Link
-        href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-        target="_blank"
-      >
-        <Typography variant="p">Login</Typography>
-      </Link>
-      <Link
-        href="https://map.sistilli.dev/public/coding/SaaS+Boilerplate"
-        target="_blank"
-      >
-        <Button size="tiny" color="ghost">
-          <Typography variant="p" className="text-black">
-            Sign Up
-          </Typography>
-        </Button>
-      </Link>
-    </div>
   )
 
   const getHeaderItems = () => {
@@ -71,7 +46,10 @@ export function Header({ className }: SidebarProps) {
           return (
             <Link
               href={item.href}
-              className="pointer block w-fit"
+              className={cn(
+                'py-1 pointer block w-fit bg-left-bottom bg-gradient-to-r from-transparent to-transparent bg-[length:0%_3px] bg-no-repeat hover:bg-[length:100%_3px] hover:from-[#4b0c0c] hover:to-[#4b0c0c] transition-all duration-500 ease-out',
+                selected && 'text-primary'
+              )}
               target={item.openInNewTab ? '_blank' : ''}
               key={item.title}
             >
@@ -90,9 +68,10 @@ export function Header({ className }: SidebarProps) {
 
   return (
     <div
+      style={{ filter: "drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2))" }}
       className={cn(
-        `flex md:h-12 h-14 items-center justify-center w-full
-          border-b`,
+        `flex py-2 items-center justify-center w-full
+         shadow-[0_6px_20px_-15px_rgba(0,0,0,0.2)] bg-[#141414]`,
         className
       )}
     >
@@ -103,14 +82,13 @@ export function Header({ className }: SidebarProps) {
             {getLogo()}
           </div>
           <div className="hidden md:flex flex items-center w-full">
-            <div className="flex items-center gap-x-8 flex-1">
+            <div className="flex items-center gap-x-8 flex-1"></div>
+            <div className="flex items-center gap-x-8">
               {getHeaderItems()}
             </div>
-            {getAuthButtons()}
           </div>
           {/* Mobile */}
-          <div className="md:hidden flex gap-x-4 items-center">
-            {getAuthButtons()}
+          <div className="group md:hidden flex gap-x-4 items-center">
             <Drawer direction="right">
               <DrawerTrigger asChild>
                 <MenuIcon />
@@ -124,7 +102,7 @@ export function Header({ className }: SidebarProps) {
                       </div>
                     </DrawerClose>
                   </DrawerHeader>
-                  <div className="p-4 pb-0 space-y-4">
+                  <div className="space-y-4">
                     {getHeaderItems()}
                   </div>
                 </div>
