@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap');
 
 @layer base {
   :root {
@@ -105,22 +106,20 @@
     font-style: normal;
   }
   .montserrat-regular {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
   }
   .merriweather-sans-regular {
-    font-family: "Merriweather Sans", sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
   }
-  
 }
 @layer components {
   .spectrum-background {
-    
     background: linear-gradient(
         150deg,
         #141414,
@@ -137,16 +136,30 @@
 
 .button-53 {
   background-color: #4b0c0c;
-  border: 0 solid #E5E7EB;
+  border: 0 solid #e5e7eb;
   box-sizing: border-box;
   color: #e6e6e6;
   display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    system-ui,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-size: 1rem;
   font-weight: 700;
   justify-content: center;
   line-height: 1.75rem;
-  padding: .75rem 1.65rem;
+  padding: 0.75rem 1.65rem;
   position: relative;
   text-align: center;
   text-decoration: none #000000 solid;
@@ -182,7 +195,7 @@
 
 @media (min-width: 768px) {
   .button-53 {
-    padding: .75rem 3rem;
+    padding: 0.75rem 3rem;
     font-size: 1.25rem;
   }
 }

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -32,7 +32,12 @@ export function Header({ className }: SidebarProps) {
 
   const getLogo = () => (
     <Link href="/" className="pointer flex items-center">
-      <img height={30} width={30} src="/logo.svg" className="mr-3" />
+      <img
+        height={30}
+        width={30}
+        src="/logo.svg"
+        className="mr-3"
+      />
     </Link>
   )
 
@@ -47,7 +52,10 @@ export function Header({ className }: SidebarProps) {
             <Link
               href={item.href}
               className={cn(
-                'py-1 pointer block w-fit bg-left-bottom bg-gradient-to-r from-transparent to-transparent bg-[length:0%_3px] bg-no-repeat hover:bg-[length:100%_3px] hover:from-[#4b0c0c] hover:to-[#4b0c0c] transition-all duration-500 ease-out',
+                `py-1 pointer block w-fit bg-left-bottom bg-gradient-to-r
+                from-transparent to-transparent bg-[length:0%_3px]
+                bg-no-repeat hover:bg-[length:100%_3px] hover:from-[#4b0c0c]
+                hover:to-[#4b0c0c] transition-all duration-500 ease-out`,
                 selected && 'text-primary'
               )}
               target={item.openInNewTab ? '_blank' : ''}
@@ -68,10 +76,13 @@ export function Header({ className }: SidebarProps) {
 
   return (
     <div
-      style={{ filter: "drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2))" }}
+      style={{
+        filter:
+          'drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2))'
+      }}
       className={cn(
         `flex py-2 items-center justify-center w-full
-         shadow-[0_6px_20px_-15px_rgba(0,0,0,0.2)] bg-[#141414]`,
+          shadow-[0_6px_20px_-15px_rgba(0,0,0,0.2)] bg-[#141414]`,
         className
       )}
     >

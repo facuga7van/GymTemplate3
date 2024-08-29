@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import Typography from '@/components/ui/typography'
 import Feature from './feature'
-import SheetsData from '@/components/common/Excel';
+import SheetsData from '@/components/common/Excel'
 import { Medal, HeartPulse, Handshake } from 'lucide-react'
 import Link from 'next/link'
 import { Divider } from '@/components/ui/divider'
@@ -96,16 +96,12 @@ export default function Home() {
           </div>
         </div>
 
-
         <div className="flex flex-col gap-6 max-w-2xl items-center">
-          <Typography
-            className="max-w-2xl"
-            variant="h1"
-          >
+          <Typography className="max-w-2xl" variant="h1">
             Horarios
           </Typography>
           <div>
-          <SheetsData/>
+            <SheetsData />
           </div>
         </div>
       </div>
@@ -117,7 +113,6 @@ export default function Home() {
           text="Conviertete en el cambio que deseas ver en el mundo"
         />
       </div>
-      
 
       <div
         id="Contacto"
