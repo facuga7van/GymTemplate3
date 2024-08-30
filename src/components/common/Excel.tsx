@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react'
 export default function SheetsData() {
   const [data, setData] = useState<string[][]>([])
   const [isMobile, setIsMobile] = useState<boolean>(false)
-  const [filteredData, setFilteredData] = useState<string[][]>([])
+  const [filteredData, setFilteredData] = useState<
+    string[][]
+  >([])
 
   useEffect(() => {
     // Detectar cambios en el tamaño de la ventana para ajustar el diseño
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768) // Puedes ajustar el breakpoint según tu diseño
-      
     }
 
     // Agregar event listener al redimensionar
@@ -42,8 +43,8 @@ export default function SheetsData() {
           )
 
         // Filtrar las filas completamente vacías
-        const nonEmptyRows = rows.filter(row =>
-          row.some(cell => cell.trim() !== '')
+        const nonEmptyRows = rows.filter((row) =>
+          row.some((cell) => cell.trim() !== '')
         )
 
         setData(rows)
@@ -63,7 +64,9 @@ export default function SheetsData() {
   }
 
   // Transponer los datos si es móvil
-  const displayData = isMobile ? transpose(filteredData) : filteredData
+  const displayData = isMobile
+    ? transpose(filteredData)
+    : filteredData
 
   return (
     <div className="w-full pb-10 items-center">
