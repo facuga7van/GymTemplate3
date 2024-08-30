@@ -5,6 +5,7 @@ import SheetsData from '@/components/common/Excel'
 import { Medal, HeartPulse, Handshake } from 'lucide-react'
 import Link from 'next/link'
 import { Divider } from '@/components/ui/divider'
+import SheetsImages from '@/components/common/drive'
 
 export default function Home() {
   return (
@@ -98,7 +99,16 @@ export default function Home() {
             <SheetsData />
           </div>
         </div>
+        
       </div>
+      <div className="flex flex-col gap-12 items-center">
+          <Typography className="max-w-2xl" variant="h1">
+            Galeria
+          </Typography>
+          <div className="flex flex-col gap-6 max-w-[55%] items-center"> 
+            <SheetsImages />
+          </div>
+        </div>
       <div className="w-full h-[200px] divider-container">
         <Divider
           variant="primary"

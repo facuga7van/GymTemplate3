@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react'
 export default function SheetsData() {
   const [data, setData] = useState<string[][]>([])
   const [isMobile, setIsMobile] = useState<boolean>(false)
+  const [filteredData, setFilteredData] = useState<string[][]>([])
 
   useEffect(() => {
     // Detectar cambios en el tamaño de la ventana para ajustar el diseño
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768) // Puedes ajustar el breakpoint según tu diseño
+      
     }
 
     // Agregar event listener al redimensionar
@@ -24,7 +26,7 @@ export default function SheetsData() {
 
   useEffect(() => {
     fetch(
-      'https://docs.google.com/spreadsheets/d/1nx_488aeoJOVrEJiWG7PUbpOLZfW2wuEkhsCPXpXCyo/gviz/tq?tqx=out:json'
+      'https://docs.google.com/spreadsheets/d/1nx_488aeoJOVrEJiWG7PUbpOLZfW2wuEkhsCPXpXCyo/gviz/tq?tqx=output:json'
     )
       .then(async (response) => await response.text())
       .then((text) => {
@@ -39,10 +41,16 @@ export default function SheetsData() {
             )
           )
 
+        // Filtrar las filas completamente vacías
+        const nonEmptyRows = rows.filter(row =>
+          row.some(cell => cell.trim() !== '')
+        )
+
         setData(rows)
+        setFilteredData(nonEmptyRows)
       })
       .catch((error) => {
-        console.error('Error fetching data:', error)
+        console.error('Error fetching data:', error, data)
       })
   }, [])
 
@@ -55,7 +63,7 @@ export default function SheetsData() {
   }
 
   // Transponer los datos si es móvil
-  const displayData = isMobile ? transpose(data) : data
+  const displayData = isMobile ? transpose(filteredData) : filteredData
 
   return (
     <div className="w-full pb-10 items-center">
