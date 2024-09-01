@@ -35,7 +35,7 @@ export function Header({ className }: SidebarProps) {
       <img
         height={30}
         width={30}
-        src="/logo.svg"
+        src="logo.svg"
         className="mr-3"
       />
     </Link>

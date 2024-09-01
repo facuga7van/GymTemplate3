@@ -58,12 +58,12 @@ export default function Home() {
             <img
               className="sm:w-[15rem]"
               alt="Paula image"
-              src="/man.jpg"
+              src="man.jpg"
             />
             <img
               className="sm:w-[15rem]"
               alt="Paula image"
-              src="/woman.jpg"
+              src="woman.jpg"
             />
           </div>
         </div>
