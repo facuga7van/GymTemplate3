@@ -9,15 +9,12 @@ export default function SheetsData() {
   >([])
 
   useEffect(() => {
-    // Detectar cambios en el tamaño de la ventana para ajustar el diseño
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768) // Puedes ajustar el breakpoint según tu diseño
+      setIsMobile(window.innerWidth < 768) 
     }
 
-    // Agregar event listener al redimensionar
     window.addEventListener('resize', handleResize)
 
-    // Inicializar el estado en el primer renderizado
     handleResize()
 
     return () => {
@@ -35,14 +32,13 @@ export default function SheetsData() {
           text.substr(47).slice(0, -2)
         )
         const rows: string[][] = json.table.rows
-          .slice(1) // Saltar la primera fila que contiene el header
+          .slice(1)
           .map((row: { c: any[] }) =>
             row.c.map((cell) =>
               typeof cell?.v === 'string' ? cell.v : ''
             )
           )
 
-        // Filtrar las filas completamente vacías
         const nonEmptyRows = rows.filter((row) =>
           row.some((cell) => cell.trim() !== '')
         )
@@ -55,7 +51,6 @@ export default function SheetsData() {
       })
   }, [])
 
-  // Función para transponer los datos
   const transpose = (matrix: string[][]) => {
     if (matrix.length === 0) return matrix
     return matrix[0].map((_, colIndex) =>
@@ -63,7 +58,6 @@ export default function SheetsData() {
     )
   }
 
-  // Transponer los datos si es móvil
   const displayData = isMobile
     ? transpose(filteredData)
     : filteredData
@@ -81,8 +75,6 @@ export default function SheetsData() {
         }}
       />
       <div className="overflow-x-auto">
-        {' '}
-        {/* Contenedor con scroll lateral */}
         <table className="table-auto w-full md:w-[60%] border-collapse mx-auto px-1">
           <tbody>
             {displayData.map((row, rowIndex) => (
