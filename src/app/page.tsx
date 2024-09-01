@@ -31,7 +31,7 @@ export default function Home() {
             width={1024}
             height={632}
             alt="Gym image"
-            src="/pic.jpg"
+            src="pic.jpg"
           />
         </div>
       </div>
